@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <img src="Benetly_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="Bently_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h3><b>Benlety Luxury Cars</b></h3>
 </div>
