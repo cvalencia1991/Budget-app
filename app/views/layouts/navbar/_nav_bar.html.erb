@@ -1,0 +1,30 @@
+<nav class="flex flex-row m-10">
+    <div class="container flex justify-between">
+        <div>
+          <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        </div>
+        <div>
+            <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
+        </div>
+        <div class="flex gap-3">
+            <div>
+                <%= link_to new_user_session_path do  %>
+                    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        sign in
+                    </button>
+                <% end %>
+            </div>
+            <div>
+                <%= link_to new_user_registration_path do  %>
+                    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        Sign up
+                    </button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</nav>
