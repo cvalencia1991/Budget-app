@@ -17,6 +17,9 @@
   </div>
 
   <div class="my-5">
+      <% if group.icon.attached?%>
+        <%= image_tag group.icon, class: "w-20 h-20" %>
+      <%end%>
     <%= form.label :icon %>
     <%= form.file_field :icon %>
   </div>

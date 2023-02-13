@@ -6,14 +6,13 @@ class Ability
   def initialize(user)
 
     user ||= User.new
-
-
     if user.role == "admin"
       can :manage, :all
     else
-      can :read, :Groups
-      can :read, :Transaction
+      can :manage, Group
+      can :manage, Transaction
     end
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
