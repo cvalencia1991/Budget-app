@@ -5,6 +5,7 @@ ruby "3.1.3"
 gem 'dotenv-rails'
 gem 'devise'
 gem 'letter_opener'
+gem 'cancancan'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
