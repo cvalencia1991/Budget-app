@@ -5,4 +5,10 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
   validates :name, presence: true
 
+  private
+  def sorted
+    groups.order('created_at DESC')
+  end
+
+
 end

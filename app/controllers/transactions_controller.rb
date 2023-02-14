@@ -5,15 +5,17 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
+
     @transactions = Transaction.includes(:group).all
   end
 
   # GET /transactions/1 or /transactions/1.json
   def show
-    if Transaction.where(group_id: params[:user_id]).exists?
-      redirect_to groups_path, notice: "There is no transaction with that ID."
+    if Transaction.where(id: params[:id]).empty?
+      flash[:notice] = "there is no transaction with id #{params[:id]}"
     else
-      @transaction = Transaction.find(params[:id])
+      @transactions = Transaction.where(group_id: params[:id])
+      @total = Transaction.where(group_id: params[:id]).sum(:amount)
     end
   end
 
@@ -75,4 +77,5 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:name, :amount, :user_id, :group_id)
     end
+
 end
