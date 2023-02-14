@@ -25,7 +25,13 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
-
+    icon_data = params[:group][:icon].read
+    icon_blob = ActiveStorage::Blob.create_and_upload!(
+      io: StringIO.new(icon_data),
+      filename: params[:group][:icon].original_filename,
+      content_type: params[:group][:icon].content_type
+    )
+    @group.icon.attach(icon_blob)
     respond_to do |format|
       if @group.save
         format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
@@ -68,6 +74,6 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:name, :icon, :user_id)
+      params.require(:group).permit(:name, :user_id)
     end
 end

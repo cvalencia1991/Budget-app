@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_225534) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.text "icon"
+    t.text "binary"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_225534) do
 
   create_table "transactions", force: :cascade do |t|
     t.string "name"
-    t.float "amount"
+    t.float "amount", default: 0.0
     t.bigint "user_id"
     t.bigint "group_id"
     t.datetime "created_at", null: false

@@ -2,13 +2,28 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
-  <div class="flex justify-between items-center">
+  <div class="flex flex-col gap-3 justify-between items-center">
     <h1 class="font-bold text-4xl">Groups</h1>
     <%= link_to 'New group', new_group_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
-
-  <div id="groups" class="min-w-full">
-    <%= render @groups %>
+  <div class="flex flex-col  justify-center">
+    <% @groups.each do |group|%>
+      <div id="groups" class=" min-w-full ">
+        <div class="flex m-10 items-center justify-center">
+          <%= image_tag group.icon, class:"w-20"%>
+          <div class="flex flex-col gap-3 m-1 items-center ">
+            <%= group.name%>
+            <div class="flex">
+            <%= group.created_at.strftime("%d-%m-%Y")%>
+          </div>
+            <div class= "flex gap-3">
+            <%= link_to 'Show', group_path(group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+            <%= link_to 'Edit', edit_group_path(group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+            <%= link_to 'Destroy', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
   </div>
 </div>
