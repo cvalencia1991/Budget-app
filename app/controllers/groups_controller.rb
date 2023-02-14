@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
   before_action :set_group, only: %i[ show edit update destroy ]
 
@@ -9,6 +10,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @groups = Group.find(params[:id])
   end
 
   # GET /groups/new
