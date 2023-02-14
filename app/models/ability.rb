@@ -10,7 +10,8 @@ class Ability
       can :manage, :all
     else
       can :manage, Group
-      can :manage, Transaction
+      can :read, Transaction
+      can :create, Transaction
     end
 
     # Define abilities for the user here. For example:

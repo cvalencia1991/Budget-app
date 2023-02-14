@@ -5,16 +5,22 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.includes(:group).all
   end
 
   # GET /transactions/1 or /transactions/1.json
   def show
+    if Transaction.where(group_id: params[:user_id]).exists?
+      redirect_to groups_path, notice: "There is no transaction with that ID."
+    else
+      @transaction = Transaction.find(params[:id])
+    end
   end
 
   # GET /transactions/new
   def new
     @transaction = Transaction.new
+    @groups = Group.all
   end
 
   # GET /transactions/1/edit
