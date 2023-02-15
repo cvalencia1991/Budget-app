@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1 or /transactions/1.json
   def show
     if Transaction.where(group_id: params[:id]).empty?
-      flash[:notice] = "there is no transaction with id #{params[:id]}"
+      flash[:notice] = "there is no transaction in this group"
     else
       @transactions = Transaction.where(group_id: params[:id]).order(created_at: :desc)
       @total = Transaction.includes(:group).where(group_id: params[:id]).sum(:amount)
