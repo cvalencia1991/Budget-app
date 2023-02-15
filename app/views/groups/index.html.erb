@@ -7,6 +7,7 @@
     <%= link_to 'New group', new_group_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
   <div class="flex flex-col  justify-center">
+
     <% @groups.each do |group|%>
         <div id="groups" class=" min-w-full ">
           <div class="flex m-10 items-center justify-center">
@@ -24,7 +25,15 @@
             <%= link_to 'Destroy', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
           </div>
         </div>
-          <%=@total%>
+        <% @total.each do |key, value| %>
+          <%if key == group.id%>
+            <div class="flex flex-col gap-3 m-1 items-center ">
+                <div class="flex">
+                  $<%= value%>
+                </div>
+              </div>
+          <%end%>
+        <%end%>
       </div>
     </div>
   <%end%>
