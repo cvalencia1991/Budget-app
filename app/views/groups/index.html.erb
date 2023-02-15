@@ -10,19 +10,14 @@
 
     <% @groups.each do |group|%>
         <div id="groups" class=" min-w-full ">
-          <div class="flex m-10 items-center justify-center">
+          <div class="flex gap-3 m-10 items-center justify-center">
           <%= image_tag group.icon, class:"w-20"%>
           <div class="flex flex-col gap-3 m-1 items-center ">
-            <%=link_to transaction_path(group.id)  do%>
+            <%=link_to payment_path(group.id)  do%>
               <%= group.name%>
             <%end%>
             <div class="flex">
             <%= group.created_at.strftime("%d-%m-%Y")%>
-          </div>
-            <div class= "flex gap-3">
-            <%= link_to 'Show', group_path(group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-            <%= link_to 'Edit', edit_group_path(group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-            <%= link_to 'Destroy', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
           </div>
         </div>
         <% @total.each do |key, value| %>

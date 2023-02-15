@@ -1,10 +1,10 @@
-<%= form_with(model: transaction, class: "contents") do |form| %>
-  <% if transaction.errors.any? %>
+<%= form_with(model: payment, class: "contents") do |form| %>
+  <% if payment.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
       <ul>
-        <% transaction.errors.each do |error| %>
+        <% payment.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -29,7 +29,6 @@
     <%= form.label :group_id %>
       <%= form.collection_select :group_id, @groups, :id, :name, prompt: true %>
   </div>
-
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
