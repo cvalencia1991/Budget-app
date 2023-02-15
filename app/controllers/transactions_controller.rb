@@ -15,7 +15,7 @@ class TransactionsController < ApplicationController
       flash[:notice] = "there is no transaction with id #{params[:id]}"
     else
       @transactions = Transaction.where(group_id: params[:id])
-      @total = Transaction.where(group_id: params[:id]).sum(:amount)
+      @total = Transaction.includes(:group).where(group_id: params[:id]).sum(:amount)
     end
   end
 
@@ -77,5 +77,6 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:name, :amount, :user_id, :group_id)
     end
+
 
 end
