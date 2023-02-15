@@ -1,17 +1,13 @@
 <div id="<%= dom_id transaction %>">
 
   <h2 class="text-2xl font-medium mb-5">
+   <strong class="block font-medium mb-1">name:</strong>
     <%= transaction.name %>
   </h2>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Amount:</strong>
     <%= transaction.amount %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Group:</strong>
-    <%= transaction.group_id %>
   </p>
 
   <% if action_name != "show" %>
