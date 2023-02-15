@@ -27,11 +27,17 @@
         </div>
         <% @total.each do |key, value| %>
           <%if key == group.id%>
-            <div class="flex flex-col gap-3 m-1 items-center ">
+              <div class="flex flex-col gap-3 m-1 items-center ">
                 <div class="flex">
                   $<%= value%>
                 </div>
               </div>
+          <%else%>
+            <div class="flex flex-col gap-3 m-1 items-center ">
+                <div class="flex">
+                  $0.0
+                </div>
+            </div>
           <%end%>
         <%end%>
       </div>
