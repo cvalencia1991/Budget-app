@@ -72,9 +72,16 @@ how to use the information of page of bentely
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-(live demo)[working on it]
+[Live demo](https://bently-luxury-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⏯ Video <a name="live-demo"></a>
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -90,6 +97,7 @@ In order to run this project you need:
 ```sh
  gem install rails
  bundle install
+ npm install
 ```
 
 
