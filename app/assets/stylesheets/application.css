@@ -22,23 +22,23 @@
   width: 20em;
 }
 
-.initialize{
+.initialize {
   position: relative;
   top: 20%;
 }
 
-.nav_main{
+.nav_main {
   background: #3778c2;
 }
 
-.groups{
+.groups {
   background: #c2c5c4;
 }
 
-.greenbottom{
+.greenbottom {
   background: #5fb523;
 }
 
-.line{
+.line {
   height: 1px;
 }
