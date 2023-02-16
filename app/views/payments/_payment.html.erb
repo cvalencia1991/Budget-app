@@ -1,17 +1,16 @@
 <div id="<%= dom_id payment %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= payment.name %>
-  </p>
+<table class="min-w-full divide-y divide-gray-200">
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Amount:</strong>
-    <%= payment.amount %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this payment", payment, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this payment', edit_payment_path(payment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  <tbody class="bg-white divide-y divide-gray-200">
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Name</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= payment.name %></td>
+    </tr>
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Amount</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$<%= payment.amount %></td>
+        <hr class="mt-6 border-gray-200">
+    </tr>
+  </tbody>
+</table>
 </div>

@@ -1,19 +1,6 @@
 <nav class="flex items-center  justify-center flex-row m-10">
     <% if user_signed_in? %>
-        <div class="flex items-center justify-between">
-            <div>
-            <%=link_to groups_path do%>
-                <
-            <%end%>
-            </div>
-            <div>
-                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-            </div>
-            <div class="flex">
-              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            </div>
-        </div>
+
     <%else %>
     <div class="container flex justify-between">
         <div>
