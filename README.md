@@ -3,9 +3,9 @@
 
 <div align="center">
 
-  <img src="Bently_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="Budget_app.png" alt="logo" width="140"  height="auto" />
   <br/>
-  <h3><b>Bently Luxury Cars</b></h3>
+  <h3><b>Budget App</b></h3>
 </div>
 
 ## 📗 Table of Contents
@@ -31,11 +31,10 @@
 - [📝 License](#license)
 
 
-# Bentley Luxury Cars <a name="about-project"></a>
+# Budget App <a name="about-project"></a>
 
-**Bentle luxury Cars** is an aplication with Ruby on rails deploy the information about how to buy a car and
-how to use the information of page of bentely
-
+**Budget App** is an aplication with Ruby on rails deploy the information about how to buy a car and
+how to use the information of page of transactions and groups
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -72,16 +71,14 @@ how to use the information of page of bentely
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-[Live demo](https://bently-luxury-app.onrender.com/)
+[Live demo](https://github.com/cvalencia1991/Budget-app/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⏯ Video <a name="live-demo"></a>
 
 
-
 https://user-images.githubusercontent.com/107327344/219499783-88c2eef1-32f8-45b3-8547-537a98371c6c.mp4
-
 
 
 
@@ -112,7 +109,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
- https://github.com/cvalencia1991/Recipe-App.git
+  https://github.com/cvalencia1991/Budget-app.git
 ```
 
 
