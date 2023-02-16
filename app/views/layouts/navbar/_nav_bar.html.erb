@@ -1,20 +1,20 @@
-<nav class="flex flex-row m-10">
+<nav class="flex items-center  justify-center flex-row m-10">
     <% if user_signed_in? %>
-        <div class="container flex justify-between">
+        <div class="flex items-center justify-between">
             <div>
             <%=link_to groups_path do%>
                 <
             <%end%>
             </div>
-
             <div>
-              <%= button_to 'transactions', payments_path, method: :get %>
+                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
             </div>
-            <div>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+            <div class="flex">
+              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
+            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
             </div>
         </div>
-    <%else%>
+    <%else %>
     <div class="container flex justify-between">
         <div>
           <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
@@ -24,19 +24,21 @@
         </button>
         </div>
         <div>
+        <%=link_to root_path do %>
             <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
+        <%end%>
         </div>
         <div class="flex gap-3">
             <div>
                 <%= link_to new_user_session_path do  %>
-                    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    <button class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
                         sign in
                     </button>
                 <% end %>
             </div>
             <div>
                 <%= link_to new_user_registration_path do  %>
-                    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    <button class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
                         Sign up
                     </button>
                 <% end %>
