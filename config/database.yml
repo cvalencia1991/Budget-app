@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: Bentley_Luxury_Cars_production
-  username: Bentley_Luxury_Cars
-  password: <%= ENV["BENTLEY_LUXURY_CARS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
