@@ -1,22 +1,29 @@
 require "rails_helper"
 
-RSpec.describe  "Groups", type: :model do
-  subject do
-    User.create(id: 1, name: 'cesar', email: 'cesar@4a6z.com', password: '123456', confirmed_at: Time.now.utc)
-    Group.create(id: 1, name: 'luxury', icon: 'icon_1', user_id: User.first.id)
-  end
-  it 'is a group valid' do
+RSpec.describe Group, type: :model do
+  let(:user) { @user1 = User.create(name: "John", email: "john@example.com", password: "password123") }
+  @user1.skip_confirmation!
+  @user1.save
+  subject { described_class.new(name: "Test Group", user: user) }
+
+  it "is valid with valid attributes" do
     expect(subject).to be_valid
   end
 
-  # it 'is not valid without a name' do
-  #   subject.name = nil
-  #   expect(subject).to_not be_valid
-  # end
+  it "is not valid without a name" do
+    subject.name = nil
+    expect(subject).to_not be_valid
+  end
 
-  # it 'is not valid without a email' do
-  #   subject.email = nil
-  #   expect(subject).to_not be_valid
-  # end
+  it "belongs to a user" do
+    expect(subject).to respond_to(:user)
+  end
 
+  it "has many transactions" do
+    expect(subject).to respond_to(:transactions)
+  end
+
+  it "can have an icon attached" do
+    expect(subject).to respond_to(:icon)
+  end
 end
