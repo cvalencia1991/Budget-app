@@ -7,7 +7,8 @@
   <br/>
   <h3><b>Bently Luxury Cars</b></h3>
 </div>
-# 📗 Table of Contents
+
+## 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
