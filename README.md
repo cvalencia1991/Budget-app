@@ -71,7 +71,7 @@ how to use the information of page of transactions and groups
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-[Live demo](https://github.com/cvalencia1991/Budget-app/issues)
+[Live demo](https://budget-app-c6jn.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,7 +180,7 @@ You can deploy this project using:
 ## 🤝 Contributing <a name="contributing"></a>
 
 
-Feel free to check the [issues page](https://github.com/cvalencia1991/Recipe-App/issues).
+Feel free to check the [issues page](https://github.com/cvalencia1991/Budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
