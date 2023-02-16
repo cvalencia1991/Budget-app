@@ -1,1 +1,1 @@
-json.array! @payments, partial: "payments/payment", as: :payment
+json.array! @payments, partial: 'payments/payment', as: :payment

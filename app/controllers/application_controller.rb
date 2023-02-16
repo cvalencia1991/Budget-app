@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :update_allowed_parameters, if: :devise_controller?
@@ -19,12 +18,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     groups_path(@users)
   end
 
   def after_sign_out_path_for(_resource_or_scope)
     root_path
   end
-
 end

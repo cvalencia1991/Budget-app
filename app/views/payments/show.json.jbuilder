@@ -1,1 +1,1 @@
-json.partial! "payments/payment", payment: @payment
+json.partial! 'payments/payment', payment: @payment
