@@ -2,8 +2,22 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
-
+      <nav>
+        <div class="flex items-center justify-around">
+            <div>
+            <%=link_to groups_path do%>
+                <
+            <%end%>
+            </div>
+            <div>
+                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
+            </div>
+            <div class="flex">
+              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
+            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
+            </div>
+        </div>
+    </nav>
   <div class="flex flex-col gap-3 justify-between items-center">
     <h1 class="font-bold text-4xl">Payments</h1>
     <%= link_to 'New Transaction', new_payment_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
