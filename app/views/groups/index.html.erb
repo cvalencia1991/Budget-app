@@ -1,51 +1,31 @@
 <div class="w-full">
-  <% if notice.present? %>
-    <p class="flex justify-center py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-  <nav>
-        <div class="flex items-center justify-around">
-            <div>
-            <%=link_to groups_path do%>
-                <
-            <%end%>
-            </div>
-            <div>
-                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-            </div>
-            <div class="flex">
-              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            </div>
-        </div>
-  </nav>
-  <div class="flex flex-col gap-3 justify-between items-center">
-    <h1 class="font-bold text-4xl">Groups</h1>
-    <%= link_to 'New group', new_group_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-  <div class="flex flex-col items-center ">
+
+  <div class="nav_main flex text-white flex-col items-center"> Most recents</div>
+  <div class="groups p-4 flex flex-col items-center  ">
     <% @groups.each do |group|%>
-        <div id="groups" class="flex flex-col items-center contents ">
-          <div class="group-card flex border-2 rounded-md justify-evenly gap-3 m-10 items-center justify-center">
+      <%=link_to payment_path(group.id)  do%>
+        <div id="groups" class="  flex flex-col items-center contents ">
+          <div class="flex w-80 bg-white p-3 flex border-2  justify-start gap-3 mt-2 items-center">
           <%= image_tag group.icon, class:"w-20"%>
-          <div class="flex flex-col gap-3 m-1 items-center ">
-            <%=link_to payment_path(group.id)  do%>
-            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"> <%= group.name%> <button>
-            <%end%>
-            <div class="flex">
-            <%= group.created_at.strftime("%d-%m-%Y")%>
+            <div class="flex flex-col m-1 items-start ">
+            <div class="flex w-48 justify-between gap-20 pt-1">
+              <%= group.name%>
+              <% @total.each do |key, value| %>
+                <%if key == group.id%>
+                    <strong>$<%= value%></strong>
+                  <%end%>
+              <%end%>
+              </div>
+                <div class="line w-48  bg-gray-200 "></div>
+                <p class="pt-2"><%= group.created_at.strftime("%d-%m-%Y") %><p>
+              </div>
           </div>
         </div>
-        <% @total.each do |key, value| %>
-          <%if key == group.id%>
-              <div class="flex flex-col gap-3 m-1 items-center ">
-                <div class="flex">
-                  $<%= value%>
-                </div>
-              </div>
-          <%end%>
-        <%end%>
-      </div>
-    </div>
+      <%end%>
     <%end%>
   </div>
 </div>
+<% if notice.present? %>
+  <p class="flex justify-center py-2 px-3 bg-green-50 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+<% end %>
+<%= link_to 'New group', new_group_path, class: "greenbottom text-center py-3 px-5 bg-blue-600 text-white block font-medium" %>

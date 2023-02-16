@@ -1,41 +1,21 @@
-<div class="flex flex-col mx-auto md:w-2/3 w-full flex">
+<nav class="nav_main  h-12">
+  <div class="flex items-center p-2 justify-around">
+    <div>
+      <%=link_to groups_path do%>
+        <p class="text-white"><</p>
+                <%end%>
+        </div>
+        <div class="flex">
+      <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white" %>
+      </div>
+    </div>
+</nav>
+<div class="flex flex-col mx-auto md:w-2/3 p-4 w-full flex">
   <div class="flex flex-col gap-3 items-center mx-auto">
     <% if alert.present? %>
-    <nav>
-        <div class="flex items-center justify-around">
-            <div>
-            <%=link_to groups_path do%>
-                <
-            <%end%>
-            </div>
-            <div>
-                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-            </div>
-            <div class="flex">
-              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            </div>
-        </div>
-    </nav>
       <p class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="alert"><%= alert %></p>
     <% elsif notice.present?%>
      <p class=" border border-green-400 text-green-700 px-4 py-3 rounded relative" id="notice"><%= notice %></p>
-      <nav>
-        <div class="flex items-center justify-around">
-            <div>
-            <%=link_to groups_path do%>
-                <
-            <%end%>
-            </div>
-            <div>
-                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-            </div>
-            <div class="flex">
-              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            </div>
-        </div>
-    </nav>
     <h2 class="flex justify-center">
       <strong>total group transactions: </strong> $<%= @total %>
     </h2>
@@ -65,22 +45,6 @@
      <%= link_to 'Back to payments', payments_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     </div>
     <% else %>
-    <nav>
-        <div class="flex items-center justify-around">
-            <div>
-            <%=link_to groups_path do%>
-                <
-            <%end%>
-            </div>
-            <div>
-                 <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-            </div>
-            <div class="flex">
-              <%= button_to 'Transactions', payments_path, method: :get, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
-            </div>
-        </div>
-    </nav>
     <h2 class="flex justify-center">
       <strong>total group transactions: </strong> $<%= @total %>
     </h2>
@@ -106,9 +70,7 @@
     </tbody>
   </table>
 </div>
-    <div class="inline-block ml-2">
-     <%= link_to 'Back to payments', payments_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    </div>
     <% end %>
   </div>
 </div>
+<%= link_to 'New Transaction',new_payment_path, class: "greenbottom text-center py-3 px-5 bg-blue-600 text-white block font-medium" %>

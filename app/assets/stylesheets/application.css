@@ -21,3 +21,24 @@
 .group-card {
   width: 20em;
 }
+
+.initialize{
+  position: relative;
+  top: 20%;
+}
+
+.nav_main{
+  background: #3778c2;
+}
+
+.groups{
+  background: #c2c5c4;
+}
+
+.greenbottom{
+  background: #5fb523;
+}
+
+.line{
+  height: 1px;
+}

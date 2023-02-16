@@ -1,36 +1,76 @@
-<nav class="flex items-center  justify-center flex-row m-10">
-    <% if user_signed_in? %>
-
-    <%else %>
-    <div class="container flex justify-between">
-        <div>
-          <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+<% if current_page?(user_session_path) %>
+    <nav class="nav_main h-12">
+        <div class="pt-2 flex justify-around items-center ">
+                <%= link_to '<', root_path, class:"text-white " %>
+            <div>
+                <p class="text-white">LOGIN</p>
+            </div>
+            <div>
+               <p class="text-white"> Log in</p>
+            </div>
         </div>
-        <div>
-        <%=link_to root_path do %>
-            <img class="w-20" src="<%= asset_path 'Bently_logo.png' %>">
-        <%end%>
+    </nav>
+<% elsif current_page?(new_user_registration_path) %>
+   <nav class="nav_main h-12">
+        <div class="pt-2 flex justify-around items-center ">
+                <div class="w-5">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+                        </svg>
+                </div>
+            <div>
+                <p class="text-white">REGISTER</p>
+            </div>
+            <div>
+               <p class="text-white">Next</p>
+            </div>
         </div>
-        <div class="flex gap-3">
+    </nav>
+    <% elsif current_page?(groups_path) %>
+     <nav class="nav_main h-12">
+        <div class="flex items-center justify-around p-2">
+            <div>
+                <%=link_to groups_path do%><p class="text-white"><</p><%end%>
+            </div>
+            <div>
+             <%= button_to 'Transactions', payments_path, method: :get, class:"text-white" %>
+            </div>
+            <div class="flex">
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete, class:"text-white " %>
+            </div>
+        </div>
+    </nav>
+    <%elsif current_page?(payments_path) %>
+        <nav class="nav_main  h-12">
+            <div class="flex items-center p-2 justify-around">
+                <div>
+                <%=link_to groups_path do%>
+                    <p class="text-white"><</p>
+                <%end%>
+                </div>
+                <div class="flex">
+                <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white" %>
+                </div>
+            </div>
+        </nav>
+    <%elsif current_page?(root_path)%>
+     <div class="initialize mt-80 container flex items-center justify-center">
+        <div class="intro flex flex-col items-center gap-3">
             <div>
                 <%= link_to new_user_session_path do  %>
-                    <button class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
+                    <button class="w-52 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         sign in
                     </button>
                 <% end %>
             </div>
             <div>
                 <%= link_to new_user_registration_path do  %>
-                    <button class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
+                    <button class="w-52 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Sign up
                     </button>
                 <% end %>
             </div>
         </div>
     </div>
-    <%end%>
-</nav>
+    <%else%>
+<%end%>
