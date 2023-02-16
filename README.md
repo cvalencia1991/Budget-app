@@ -80,7 +80,8 @@ how to use the information of page of bentely
 
 
 
-https://user-images.githubusercontent.com/107327344/219411951-5ef53204-4315-4190-9834-c95611290ce5.mp4
+https://user-images.githubusercontent.com/107327344/219499783-88c2eef1-32f8-45b3-8547-537a98371c6c.mp4
+
 
 
 
