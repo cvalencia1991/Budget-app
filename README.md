@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <img src="Bently_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="Budget_app.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h3><b>Bently Luxury Cars</b></h3>
 </div>
@@ -31,10 +31,10 @@
 - [📝 License](#license)
 
 
-# Bentley Luxury Cars <a name="about-project"></a>
+# Budget App <a name="about-project"></a>
 
-**Bentle luxury Cars** is an aplication with Ruby on rails deploy the information about how to buy a car and
-how to use the information of page of bentely
+**Budget App** is an aplication with Ruby on rails deploy the information about how to buy a car and
+how to use the information of a budget information
 
 ## 🛠 Built With <a name="built-with"></a>
 
