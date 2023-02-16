@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 class Ability
+  # frozen_string_literal: true
   include CanCan::Ability
 
   def initialize(user)

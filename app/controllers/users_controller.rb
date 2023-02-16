@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
-  Roles = %i[admin default]
+  ROLES = %i[admin default].freeze
   # GET /users or /users.json
   def index
     @users = User.all
