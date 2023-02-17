@@ -1,0 +1,74 @@
+<% if current_page?(user_session_path) %>
+    <nav class="nav_main h-12">
+        <div class="pt-2 flex justify-around items-center ">
+                <%= link_to '<', root_path, class:"text-white " %>
+            <div>
+                <p class="text-white">LOGIN</p>
+            </div>
+            <div>
+               <p class="text-white"> Log in</p>
+            </div>
+        </div>
+    </nav>
+<% elsif current_page?(new_user_registration_path) %>
+   <nav class="nav_main h-12">
+        <div class="pt-2 flex justify-around items-center ">
+                <div class="w-5">
+                    <%= link_to '<', root_path, class:"text-white " %>
+                </div>
+            <div>
+                <p class="text-white">REGISTER</p>
+            </div>
+            <div>
+               <p class="text-white">Next</p>
+            </div>
+        </div>
+    </nav>
+    <% elsif current_page?(groups_path) %>
+     <nav class="nav_main h-12">
+        <div class="flex items-center justify-around p-2">
+            <div>
+                <%=link_to groups_path do%><p class="text-white"><</p><%end%>
+            </div>
+            <div>
+             <%= button_to 'Transactions', payments_path, method: :get, class:"text-white" %>
+            </div>
+            <div class="flex">
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete, class:"text-white " %>
+            </div>
+        </div>
+    </nav>
+    <%elsif current_page?(payments_path) %>
+        <nav class="nav_main  h-12">
+            <div class="flex items-center p-2 justify-around">
+                <div>
+                <%=link_to groups_path do%>
+                    <p class="text-white"><</p>
+                <%end%>
+                </div>
+                <div class="flex">
+                <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:"text-white" %>
+                </div>
+            </div>
+        </nav>
+    <%elsif current_page?(root_path)%>
+     <div class="initialize mt-80 container flex items-center justify-center">
+        <div class="intro flex flex-col items-center gap-3">
+            <div>
+                <%= link_to new_user_session_path do  %>
+                    <button class="w-52 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        sign in
+                    </button>
+                <% end %>
+            </div>
+            <div>
+                <%= link_to new_user_registration_path do  %>
+                    <button class="w-52 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Sign up
+                    </button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <%else%>
+<%end%>

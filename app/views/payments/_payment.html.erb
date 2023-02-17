@@ -1,0 +1,16 @@
+<div id="<%= dom_id payment %>">
+<table class="min-w-full divide-y divide-gray-200">
+
+  <tbody class="bg-white divide-y divide-gray-200">
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Name</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= payment.name %></td>
+    </tr>
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Amount</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$<%= payment.amount %></td>
+        <hr class="mt-6 border-gray-200">
+    </tr>
+  </tbody>
+</table>
+</div>
