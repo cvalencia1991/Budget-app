@@ -14,7 +14,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -67,13 +66,6 @@ how to use the information of page of transactions and groups
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-
-[Live demo](https://budget-app-c6jn.onrender.com/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⏯ Video <a name="live-demo"></a>
 
